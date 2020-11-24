@@ -1,0 +1,20 @@
+<h1>Scientist Show Page</h1>
+
+<h3><%= @scientist.name %></h3>
+
+<p><%= @scientist.field_of_study %></p>
+
+<h2>List of Planets and Missions</h2>
+
+<ul>
+<% @scientist.missions.each do |s| %>
+    <li>
+    <%= s.planet.name %>
+    <br>
+    <%= s.name %>
+    </li>
+    <br>
+<% end %>
+</ul>
+<br>
+<%= button_to "DELETE", scientist_path(@scientist), method: :delete %>
